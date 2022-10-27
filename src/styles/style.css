@@ -1,0 +1,92 @@
+*,
+body {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Google Sans", sans-serif;
+  color: #5f6368;
+  text-align: center;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+  align-items: center;
+  gap: 15px;
+  padding-top: 40px;
+  margin-bottom: 25px;
+}
+
+header img {
+  width: 48px;
+  height: 48px;
+}
+form {
+  width: 40%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: 1px 3px 5px rgb(0 0 0 / 50%);
+  padding: 15px;
+  gap: 15px;
+}
+form input.mainInputs {
+  border: none;
+  border-bottom: 1px solid gray;
+  outline: none;
+  font-weight: 700;
+  padding-bottom: 2px;
+  height: 25px;
+  display: none;
+}
+form textarea#inputNote {
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  resize: none;
+  border: none;
+  border-bottom: 1px solid gray;
+  outline: none;
+  padding-bottom: 2px;
+  height: 25px;
+}
+form #titleInput {
+  font-size: 20px;
+}
+form #labelsInput {
+  font-size: 8px;
+  font-style: italic;
+  padding-top: 10px;
+  letter-spacing: 0.5px;
+}
+#mainButtonDiv {
+  display: flex;
+  justify-content: end;
+  display: none;
+}
+#mainButtonDiv button {
+  padding: 0.5rem 1.5rem;
+  letter-spacing: 1px;
+  font-weight: 700;
+  border-radius: 5px;
+  color: #7b7d80;
+  cursor: pointer;
+  border: none;
+}
+#mainButtonDiv #submitBtn {
+  background-color: #007bff;
+  color: white;
+  margin-right: 5px;
+}
+#mainButtonDiv #submitBtn:hover {
+  background-color: #002fff;
+}
+#mainButtonDiv #closeBtn:hover {
+  background-color: #5f6368;
+  color: white;
+}
