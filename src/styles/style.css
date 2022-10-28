@@ -50,10 +50,12 @@ form textarea#inputNote {
   letter-spacing: 0.5px;
   resize: none;
   border: none;
-  border-bottom: 1px solid gray;
   outline: none;
   padding-bottom: 2px;
   height: 25px;
+}
+.addBottomLine {
+  border-bottom: 1px solid gray !important;
 }
 form #titleInput {
   font-size: 20px;
@@ -89,4 +91,9 @@ form #labelsInput {
 #mainButtonDiv #closeBtn:hover {
   background-color: #5f6368;
   color: white;
+}
+#notesYouAdd {
+  margin-top: 100px;
+  color: #80868b;
+  font-size: 1.5rem;
 }
