@@ -17,7 +17,3 @@ document.querySelector("#submitBtn").addEventListener("click", (e) => {
   e.preventDefault();
   Submit(title.value, note.value, labels.value);
 });
-
-let proba = JSON.parse(localStorage.getItem(2));
-
-console.log(proba);
