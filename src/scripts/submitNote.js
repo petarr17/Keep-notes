@@ -7,7 +7,6 @@ function Submit(title, note, labels) {
     document.querySelector("#labelsInput").value = "";
     labels = labels.split(",");
     for (let i = 0; i < labels.length; i++) labels[i] = labels[i].trim();
-    console.log(labels);
 
     let data = {
       title: title,
@@ -50,16 +49,21 @@ function Submit(title, note, labels) {
       localStorage.setItem(id, JSON.stringify(data));
     }
     let labelshtml = "";
-    if (labels.length !== 0) {
+
+    if (labels.length === 1 && labels[0] === "") {
+      labelshtml += `<div class="emptyLabel"></div>`;
+    } else {
       labels.forEach(function (lbl) {
-        labelshtml += `<div class="miniLabelDiv">${lbl}</div>`;
+        if (lbl.trim() !== "")
+          labelshtml += `<div class="miniLabelDiv">${lbl}</div>`;
       });
     }
-
+    if (title.trim() === "") title = "(no title)";
+    if (note.trim() === "") note = "(no description)";
     document.querySelector("#notesYouAdd").style.display = "none";
-    document.querySelector(
-      "#content"
-    ).innerHTML = `<div class="note" id="note-${id}">
+    let html = document.querySelector("#content").innerHTML;
+    document.querySelector("#content").innerHTML =
+      `<div class="note"  id="note-${id}">
     <p class="title" id="title-${id}">${title}</p>
     <p class="noteContent" id="content-${id}">${note}</p>
     <div class="bigLabelDiv" id="labels-${id}">${labelshtml}</div>
@@ -75,7 +79,7 @@ function Submit(title, note, labels) {
       </div></i>
     
     </div>
-    </div>`;
+    </div>` + html;
   }
 }
 export default Submit;

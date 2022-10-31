@@ -1,5 +1,8 @@
 import { Open, Close } from "../src/scripts/noteOpenClose.js";
 import Submit from "../src/scripts/submitNote.js";
+import displayNotes from "../src/scripts/displayNotes.js";
+
+displayNotes();
 
 let title = document.querySelector("#titleInput");
 let note = document.querySelector("#inputNote");

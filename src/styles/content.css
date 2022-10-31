@@ -5,11 +5,13 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  gap: 2rem;
 }
 
 #content .note {
   position: relative;
   width: 25%;
+  min-width: 250px;
   height: 9rem;
   display: flex;
   flex-direction: column;
@@ -29,7 +31,7 @@
   font-size: 20px;
 }
 #content .note .noteContent {
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 700;
 }
 #content .note .bigLabelDiv {
@@ -46,6 +48,11 @@
   color: white;
   padding: 0.3em;
   border: 1px solid black;
+}
+.emptyLabel {
+  width: 10px;
+  height: 10px;
+  background-color: white;
 }
 #content .note .iconsDiv {
   position: absolute;
