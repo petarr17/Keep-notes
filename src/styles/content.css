@@ -56,12 +56,18 @@
 }
 #content .note .iconsDiv {
   position: absolute;
-  display: flex;
   width: 40px;
   justify-content: space-between;
   bottom: 10px;
   right: 10px;
 }
+.iconsDiv {
+  display: none;
+}
+.note:hover div.iconsDiv {
+  display: flex;
+}
+
 #content .note .iconsDiv .trash,
 #content .note .iconsDiv .pallete {
   color: black;
