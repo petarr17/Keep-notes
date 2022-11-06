@@ -1,7 +1,7 @@
 import { Open, Close } from "../src/scripts/noteOpenClose.js";
-import Submit from "../src/scripts/submitNote.js";
+import addNote from "./scripts/addNote.js";
 import displayNotes from "../src/scripts/displayNotes.js";
-
+import editNote from "../src/scripts/editNote.js";
 displayNotes();
 
 let title = document.querySelector("#titleInput");
@@ -18,5 +18,13 @@ document.querySelector("#closeBtn").addEventListener("click", (e) => {
 });
 document.querySelector("#submitBtn").addEventListener("click", (e) => {
   e.preventDefault();
-  Submit(title.value, note.value, labels.value);
+  addNote(title.value, note.value, labels.value);
 });
+
+document
+  .querySelector('[data="editDiv"]')
+  .addEventListener("submit", function (e) {
+    e.preventDefault();
+    let id = document.querySelector('[data="modal"]').getAttribute("id");
+    editNote(id);
+  });

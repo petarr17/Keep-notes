@@ -7,6 +7,7 @@
     <link rel="icon" href="/public/assets/keep_logo.png" />
     <link rel="stylesheet" href="/src/styles/style.css" />
     <link rel="stylesheet" href="/src/styles/content.css" />
+    <link rel="stylesheet" href="/src/styles/modal.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
@@ -51,6 +52,35 @@
     </form>
     <p id="notesYouAdd">Notes you add appear here</p>
     <div id="content"></div>
+
+    <div data="modal">
+      <form data="editDiv">
+        <p data="closeModal">X</p>
+        <input
+          type="text"
+          placeholder="Title"
+          data="editTitle"
+          autocomplete="off"
+        />
+        <hr />
+        <input
+          type="text"
+          placeholder="Take a note"
+          data="editContent"
+          autocomplete="off"
+        />
+        <input
+          type="text"
+          placeholder="Labels(separate with comma)"
+          data="editLabels"
+          autocomplete="off"
+        />
+        <div data="submitDiv">
+          <button type="submit" data="submit">Submit</button>
+        </div>
+      </form>
+      <div data="overlay"></div>
+    </div>
 
     <script type="module" src="/src/script.js"></script>
   </body>
