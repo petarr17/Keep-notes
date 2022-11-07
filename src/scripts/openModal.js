@@ -1,7 +1,6 @@
 function openModal(e) {
   let id = e.getAttribute("data-note");
   let obj = JSON.parse(localStorage.getItem(id));
-  // console.log(obj.title, obj.note, obj.labels);
 
   document.querySelector('[data="modal"]').classList.add("displayBlock");
   document.querySelector('[data="modal"]').setAttribute("id", id);

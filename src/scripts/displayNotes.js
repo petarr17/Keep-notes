@@ -12,6 +12,10 @@ function displayNotes() {
     document.querySelector("#notesYouAdd").style.display = "none";
   else document.querySelector("#notesYouAdd").style.display = "block";
 
+  if (arr.length > 1)
+    document.querySelector(".searchDiv").classList.add("displaySearch");
+  else document.querySelector(".searchDiv").classList.remove("displaySearch");
+
   arr.sort(function (a, b) {
     return a - b;
   });

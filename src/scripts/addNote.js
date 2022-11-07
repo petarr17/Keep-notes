@@ -22,6 +22,9 @@ function addNote(title, note, labels) {
       arr.push(l);
     });
 
+    if (arr.length === 1)
+      document.querySelector(".searchDiv").classList.add("displaySearch");
+
     let max = arr.reduce((a, b) => Math.max(a, b), -Infinity);
     let valid = false;
     let id;
