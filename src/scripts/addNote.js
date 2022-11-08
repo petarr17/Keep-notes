@@ -16,11 +16,8 @@ function addNote(title, note, labels) {
       color: "white",
     };
     let localkeys = Object.keys(localStorage);
-    let arr = [];
-    localkeys.forEach(function (l) {
-      l = parseInt(l);
-      arr.push(l);
-    });
+
+    const arr = localkeys.map((key) => +key);
 
     if (arr.length === 1)
       document.querySelector(".searchDiv").classList.add("displaySearch");
@@ -32,30 +29,13 @@ function addNote(title, note, labels) {
     if (title.trim() === "") title = "(no title)";
     if (note.trim() === "") note = "(no description)";
 
-    for (let i = 0; i <= max; i++) {
-      let nmbvalid = false;
-      for (let j = 0; j <= max; j++) {
-        if (i === arr[j]) {
-          nmbvalid = true;
-        }
-      }
-      if (nmbvalid === false) {
-        valid = true;
-        id = i;
-        data.id = id;
-        localStorage.setItem(id, JSON.stringify(data));
-        break;
-      }
+    if (arr.length === 0) {
+      id = 0;
+    } else {
+      id = max + 1;
     }
-    if (valid === false) {
-      if (arr.length === 0) {
-        id = 0;
-      } else {
-        id = max + 1;
-      }
-      data.id = id;
-      localStorage.setItem(id, JSON.stringify(data));
-    }
+    data.id = id;
+    localStorage.setItem(id, JSON.stringify(data));
 
     let noteDiv = createNote(id, title, note, labels, "white");
 
