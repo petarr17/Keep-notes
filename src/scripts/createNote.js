@@ -8,7 +8,15 @@ function createNote(id, titletext, cotent, labels, color) {
   note.addEventListener("click", function (e) {
     e.preventDefault();
 
-    if (e.target.classList.contains("note")) openModal(e.target);
+    if (
+      e.currentTarget.classList.contains("note") &&
+      !e.target.classList.contains("iconsDiv") &&
+      !e.target.classList.contains("fas") &&
+      !e.target.classList.contains("color-circle") &&
+      !e.target.classList.contains("colorDiv")
+    ) {
+      openModal(e.target.closest(".note"));
+    }
   });
 
   let title = document.createElement("p");
@@ -26,7 +34,7 @@ function createNote(id, titletext, cotent, labels, color) {
   labeldiv.setAttribute("data-labels", `${id}`);
   if (labels.length === 1 && labels[0] === "") {
     let minidiv = document.createElement("div");
-    minidiv.classList.add("emptyLabel");
+    minidiv.classList.add("emptyLabel", color);
     labeldiv.appendChild(minidiv);
   } else {
     labels.forEach(function (lbl) {
